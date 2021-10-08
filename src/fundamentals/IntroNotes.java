@@ -1,4 +1,4 @@
-package Fundamentals;
+package fundamentals;
 
 public class IntroNotes {
 //  NOTE: A computer program is a SET OF INSTRUCTIONS that run on a computer or other digtal device.
