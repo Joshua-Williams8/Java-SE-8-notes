@@ -1,4 +1,4 @@
-package fundamentals.programming;
+package programming;
 
 import java.util.ArrayList;
 import java.util.Collections;

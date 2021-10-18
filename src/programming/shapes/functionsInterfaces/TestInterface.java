@@ -1,4 +1,4 @@
-package fundamentals.programming.shapes.functionsInterfaces;
+package programming.shapes.functionsInterfaces;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,6 @@ public class TestInterface {
       .filter(s -> s.contains("One"))
 //      Below is using a consumer interface(The one that returns void) to print out the strings that contain One.
       .forEach(System.out::println);
-
 
   }
 

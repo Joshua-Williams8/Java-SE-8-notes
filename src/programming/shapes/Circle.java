@@ -1,4 +1,4 @@
-package fundamentals.programming.shapes;
+package programming.shapes;
 
 //public class Circle(double radius) { // ?? Use this?
 public class Circle extends Shape{

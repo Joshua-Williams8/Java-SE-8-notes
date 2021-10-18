@@ -1,4 +1,4 @@
-package fundamentals.programming;
+package programming;
 
 public class Employee {
   private String empID;

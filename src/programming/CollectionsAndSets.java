@@ -1,9 +1,9 @@
-package fundamentals.programming;
+package programming;
 
-import fundamentals.programming.shapes.Circle;
-import fundamentals.programming.shapes.Measurable;
-import fundamentals.programming.shapes.Rectangle;
-import fundamentals.programming.shapes.Square;
+import programming.shapes.Circle;
+import programming.shapes.Measurable;
+import programming.shapes.Rectangle;
+import programming.shapes.Square;
 
 import java.util.*;
 

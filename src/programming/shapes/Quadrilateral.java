@@ -1,4 +1,4 @@
-package fundamentals.programming.shapes;
+package programming.shapes;
 
 abstract class Quadrilateral extends Shape {
 

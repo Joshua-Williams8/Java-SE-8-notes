@@ -1,4 +1,4 @@
-package fundamentals.programming.shapes;
+package programming.shapes;
 
 public interface Measurable {
   double getPerimeter();
