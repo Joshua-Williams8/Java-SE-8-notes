@@ -2,6 +2,7 @@ package learning;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StreamsTest {
 //  NOTE Java streams use imperative programming vs declarative(Which is what I learned I guess?)
@@ -20,9 +21,20 @@ public class StreamsTest {
       }
     }
     females.forEach(System.out::println);
-//    Same as SOUT
+//    Same as SOUT with a for on females to see each female oibject.
 
 // NOTE   Declarative way - New Way! O
+
+//    Filter.
+
+    List<Person> femalesFilter = people.stream()
+      .filter(person -> person.getGender().equals(Gender.FEMALE))
+      .collect(Collectors.toList());
+
+    femalesFilter.forEach(System.out::println);
+
+
+
 
   }
 
