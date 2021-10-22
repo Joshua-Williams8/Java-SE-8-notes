@@ -21,6 +21,9 @@ public class StreamsTest {
       }
     }
     females.forEach(System.out::println);
+    System.out.println("Old way above.");
+    System.out.println("Filter Below.");
+
 //    Same as SOUT with a for on females to see each female oibject.
 
 // NOTE   Declarative way - New Way! O
@@ -32,6 +35,11 @@ public class StreamsTest {
       .collect(Collectors.toList());
 
     femalesFilter.forEach(System.out::println);
+    System.out.println("Filter Above.");
+
+
+
+
 
 
 
