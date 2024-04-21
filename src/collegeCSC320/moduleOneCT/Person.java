@@ -58,9 +58,6 @@ public class Person {
     this.zipCode = zipCode;
   }
 
-  public String getAddressInfo (){
-    return this.getStreetAddress() + ", " + this.getCity() + ", " + this.getZipCode();
-  }
 
   public static void main(String[] args) {
     Person person1 = new Person();
@@ -69,6 +66,10 @@ public class Person {
     person1.setStreetAddress("555 Rainbow Rd.");
     person1.setCity("Charles Town");
     person1.setZipCode(12345);
-    System.out.println(person1.getAddressInfo());
+    System.out.println(person1.firstName);
+    System.out.println(person1.lastName);
+    System.out.println(person1.streetAddress);
+    System.out.println(person1.city);
+    System.out.println(person1.zipCode);
   }
 }
