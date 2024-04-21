@@ -66,10 +66,10 @@ public class Person {
     person1.setStreetAddress("555 Rainbow Rd.");
     person1.setCity("Charles Town");
     person1.setZipCode(12345);
-    System.out.println(person1.firstName);
-    System.out.println(person1.lastName);
-    System.out.println(person1.streetAddress);
-    System.out.println(person1.city);
-    System.out.println(person1.zipCode);
+    System.out.println(person1.getFirstName());
+    System.out.println(person1.getLastName());
+    System.out.println(person1.getStreetAddress());
+    System.out.println(person1.getCity());
+    System.out.println(person1.getZipCode());
   }
 }
