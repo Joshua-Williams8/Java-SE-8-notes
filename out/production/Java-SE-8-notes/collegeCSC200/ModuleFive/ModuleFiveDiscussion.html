@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>This will be shown if you hover over the tab</title>
+  <style>
+    p {
+      color: darkgreen;
+    }
+  </style>
+</head>
+<body>
+<p id="test">This is paragraph text</p>
+</body>
+<script>
+  document.getElementById("test").addEventListener("click", function() {
+    this.style.backgroundColor = "black";
+  });
+</script>
+</html>
