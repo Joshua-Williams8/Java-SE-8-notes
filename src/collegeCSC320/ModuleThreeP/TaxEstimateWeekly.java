@@ -22,6 +22,7 @@ public class TaxEstimateWeekly {
       System.out.println("Sorry your input is invalid please enter a positive number.");
       weeklyIncome = scanner.nextFloat();
     }
+
     if (weeklyIncome < 500) {
       taxRate = .10F;
 
@@ -41,7 +42,8 @@ public class TaxEstimateWeekly {
 
     System.out.println("With your weekly income of $" + weeklyIncome +", you pay "
       + roundNumber(taxRate * 100F) + "% of your weekly pay which is $" +
-      roundNumber(taxPaid) +" in taxes. After paying taxes you take home $"+ roundNumber(takeHome) + ".");
+      roundNumber(taxPaid) +" in taxes. After paying taxes you take home $"+
+      roundNumber(takeHome) + ".");
 
   }
 }
