@@ -7,6 +7,7 @@ public class TaxEstimateWeekly {
   private static String roundNumber(float number) {
     return String.format("%.2f", number);
   }
+
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     float weeklyIncome;
@@ -37,6 +38,13 @@ public class TaxEstimateWeekly {
 
     }
 
+    int i = 0;
+    System.out.println(i);
+    for ( i=0;i<10;++i){
+      System.out.println(i);
+
+    }
+    System.out.println(i);
     taxPaid = taxRate * weeklyIncome;
     takeHome = weeklyIncome - taxPaid;
 
@@ -44,6 +52,7 @@ public class TaxEstimateWeekly {
       + roundNumber(taxRate * 100F) + "% of your weekly pay which is $" +
       roundNumber(taxPaid) +" in taxes. After paying taxes you take home $"+
       roundNumber(takeHome) + ".");
+
 
   }
 }

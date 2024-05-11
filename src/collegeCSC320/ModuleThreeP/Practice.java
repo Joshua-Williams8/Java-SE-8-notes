@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Practice {
 
     public static void main(String[] args) {
-      Scanner scanner = new Scanner(System.in);
+    /*  Scanner scanner = new Scanner(System.in);
 
       int int1 = scanner.nextInt();
       int int2 = scanner.nextInt();
@@ -32,6 +32,12 @@ public class Practice {
           break;
       }
 
+     */ //Commented out to test some other code
+//      String num1 ;
+//      int num2 = 5;
+//      if (num1 != null && num1.length() > 0) {
+//        System.out.println("inside the if");
+//      }
     }
 
 }
