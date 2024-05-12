@@ -61,11 +61,17 @@ public class OptionOneCT {
       testList.add(scanner.nextFloat());
     }
 
-    System.out.println("The total is: " + getTotal(testList));
-    System.out.println("The average is: " + getAverage(testList));
-    System.out.println("The maximum is: " + getMax(testList));
-    System.out.println("The minimum is: " + getMin(testList));
-    System.out.println("The amount of interest on this amount with a 20% rate is: " + getInterest(testList,.20F));
+    float total = getTotal(testList);
+    float interest = getInterest(testList,.20F);
+    float totalWithInterest = total + interest;
+
+    System.out.println("The total is: " + total  + ".");
+    System.out.println("The average is: " + getAverage(testList) + ".");
+    System.out.println("The maximum is: " + getMax(testList) + ".");
+    System.out.println("The minimum is: " + getMin(testList) + ".");
+    System.out.println("The amount of interest on this amount with a 20% rate is: "
+      + interest + ". Which totals out at: " + totalWithInterest);
+
 
   }
 }
