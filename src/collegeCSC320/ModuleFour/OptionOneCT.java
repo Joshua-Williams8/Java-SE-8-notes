@@ -60,15 +60,12 @@ public class OptionOneCT {
       System.out.println("Please enter in a number for your list.");
       testList.add(scanner.nextFloat());
     }
-//    System.out.println(testList.size() + " is size of list.");
-//    System.out.println(loopCount);
+
     System.out.println("The total is: " + getTotal(testList));
     System.out.println("The average is: " + getAverage(testList));
     System.out.println("The maximum is: " + getMax(testList));
     System.out.println("The minimum is: " + getMin(testList));
     System.out.println("The amount of interest on this amount with a 20% rate is: " + getInterest(testList,.20F));
-
-
 
   }
 }
