@@ -70,7 +70,7 @@ public class OptionOneCT {
     System.out.println("The maximum is: " + getMax(testList) + ".");
     System.out.println("The minimum is: " + getMin(testList) + ".");
     System.out.println("The amount of interest on this amount with a 20% rate is: "
-      + interest + ". Which totals out at: " + totalWithInterest);
+      + interest + ". Which totals out at: " + totalWithInterest + ".");
 
 
   }
