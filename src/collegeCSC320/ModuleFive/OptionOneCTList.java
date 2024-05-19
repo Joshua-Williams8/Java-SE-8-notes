@@ -41,7 +41,6 @@ public class OptionOneCTList {
   public static void main(String[] args) {
 
     String userInput = " ";
-    System.out.println("Loop begins");
     //Incase there are any special issues.
     int loopCount = 0;
 
