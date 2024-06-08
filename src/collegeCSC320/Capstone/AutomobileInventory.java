@@ -34,6 +34,13 @@ public class AutomobileInventory {
     }
       return inventoryList;
   }
+
+  //Created just to display the listInventory output, since it needs to be repeated.
+  public void displayInventory(){
+    for (String listItem : this.listInventory()){
+      System.out.println(listItem);
+    }
+  }
 //  public int findVin (string vin) {
 //Int carIndex = -1; //We want an invalid number here just incase
 //bool carFound = false;
@@ -51,7 +58,6 @@ public class AutomobileInventory {
     boolean carFound = false;
     int count = 0;
 
-    System.out.println(getAutomobiles().size());
     try {
       while (!carFound || count < getAutomobiles().size()) {
 
@@ -66,6 +72,24 @@ public class AutomobileInventory {
       System.out.println(ex.toString());
     }
     return carIndex;
+  }
+  //public string addAuto (string make, string model, string vin, string color, int year, int mileage, double price) {
+  //Automobile newCar = new Automobile(make, model, vin, color, year, mileage, price)
+  //automobiles.add(newCar)
+  //listInventory()
+  //Return “Vehicle Successfully Added”
+  //}
+
+  public String addAutomobile (String make, String model, String vin, String color, int year, int mileage, double price) {
+    String message = "";
+    try {
+      Automobile newCar = new Automobile(make, model, vin, color, year, mileage, price);
+      automobiles.add(newCar);
+      message = "Automobile successfully Added";
+    } catch (Exception ex){
+      message = "There was an issue adding your car. Error below: \n" + ex.toString();
+    }
+    return message;
   }
 
   public static void main(String[] args) {
@@ -95,6 +119,10 @@ public class AutomobileInventory {
     }
     //End Test findVin
 
+    //Test addAutomobile
+    testInventory.addAutomobile("Dord", "Dunder Bird", "DDDDD", "Dcolor", 4000, 444, 4600.40);
+    testInventory.displayInventory();
+    //End Test addAutomobile
   }
 
 }
