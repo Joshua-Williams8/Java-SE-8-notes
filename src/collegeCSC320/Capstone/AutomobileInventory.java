@@ -46,8 +46,26 @@ public class AutomobileInventory {
 //return carIndex
 //} end of findVin
 
-  public String findVin() {
+  public int findVin(String vin) {
+    int carIndex = -1;
+    boolean carFound = false;
+    int count = 0;
 
+    System.out.println(getAutomobiles().size());
+    try {
+      while (!carFound || count < getAutomobiles().size()) {
+
+        if (getAutomobiles().get(count).getVin().equalsIgnoreCase(vin)) {
+          carIndex = count;
+          carFound = true;
+        }
+        ++count;
+      }
+    } catch (Exception ex) {
+      System.out.println("There was an issue finding the VIN for " + vin);
+      System.out.println(ex.toString());
+    }
+    return carIndex;
   }
 
   public static void main(String[] args) {
@@ -71,7 +89,10 @@ public class AutomobileInventory {
     //End Test listInventory
 
     //Test findVin
-
+    int expectedInt = 2;
+    if (testInventory.findVin("ccccc") == expectedInt) {
+      System.out.println("Test Successful");
+    }
     //End Test findVin
 
   }
