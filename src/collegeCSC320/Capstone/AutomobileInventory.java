@@ -120,7 +120,7 @@ public class AutomobileInventory {
 
     try {
       //Note: the path is for my MAC, you will need to edit this depending on your own path.
-      File newTextFile = new File("/Users/joshuawilliams/Test/Autos.txt");
+      File newTextFile = new File(File.separator + "tmp" + File.separator + "Autos.txt");
 
       FileWriter fw = new FileWriter(newTextFile);
       fw.write(inventoryList.toString());
@@ -196,8 +196,9 @@ public class AutomobileInventory {
       System.out.println("Would you like to print this information to a file? (Y or N)");
       response = scanner.next();
       if (response.equalsIgnoreCase("y")) {
-        System.out.println("Saving to: C:\\Temp\\Autos.txt ");
+        System.out.println("Saving to: C:\\tmp\\Autos.txt ");
         try {
+          //Note: Change file path in writeToFile method, if an exception is thrown.
           testInventory.writeToFile(testInventory);
         } catch (Exception ex ){
           System.out.println("Issue saving data.");
