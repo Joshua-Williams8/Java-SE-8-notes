@@ -102,7 +102,7 @@ public class AutomobileInventory {
       } else {
         Automobile update = new Automobile(make, model, vin, color, year, mileage, price);
         automobiles.set(vinIndex, update);
-        output = vin + " successfully updated.";
+        output = vin + " successfully updated.\n";
       }
     } catch (Exception ex) {
       output = "There was an issue updating " + vin + ".\n Exception information below.\n" + ex.toString();
@@ -111,7 +111,7 @@ public class AutomobileInventory {
     return output;
   }
 
-  public void writeToFile (AutomobileInventory writeThis ) {
+  public void writeToFile () {
 
     StringBuilder inventoryList = new StringBuilder();
     for (String listItem : this.listInventory()){
@@ -184,6 +184,7 @@ public class AutomobileInventory {
     //Test updateAutomobile
     String updateAutoTest = testInventory.updateAutomobile("Bodge", "Bunder Bird", "BBBBB", "Better Color", 2014, 500, 4999.40);
     if(testInventory.getAutomobiles().get(1).getYear() == 2014) {
+      System.out.println(updateAutoTest);
       testInventory.displayInventory();
     } else {
       System.out.println("Test updateAutomobile Failed");
@@ -199,7 +200,7 @@ public class AutomobileInventory {
         System.out.println("Saving to: C:\\tmp\\Autos.txt ");
         try {
           //Note: Change file path in writeToFile method, if an exception is thrown.
-          testInventory.writeToFile(testInventory);
+          testInventory.writeToFile();
         } catch (Exception ex ){
           System.out.println("Issue saving data.");
         }
