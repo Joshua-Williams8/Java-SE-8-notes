@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class AutomobileInventory {
   private List<Automobile> automobiles = new ArrayList<>();
-  private Scanner scanner = new Scanner(System.in);
 
   public AutomobileInventory(){
 
@@ -30,7 +29,8 @@ public class AutomobileInventory {
         inventoryList.add(getAutomobiles().get(i).getAutomobileInfo());
       }
     } catch (Exception ex) {
-      inventoryList.add("There was an issue with your list request, here is the exception message: \n");
+      inventoryList.add("There was an issue with your list request, " +
+        "here is the exception message: \n");
       inventoryList.add(ex.toString());
     }
       return inventoryList;
@@ -64,7 +64,8 @@ public class AutomobileInventory {
     return carIndex;
   }
 
-  public String addAutomobile (String make, String model, String vin, String color, int year, int mileage, double price) {
+  public String addAutomobile (String make, String model, String vin,
+                               String color, int year, int mileage, double price) {
     String message = "";
     try {
       Automobile newCar = new Automobile(make, model, vin, color, year, mileage, price);
@@ -81,31 +82,36 @@ public class AutomobileInventory {
     String output = "";
     try {
       if (vinIndex == -1) {
-        output = vin + " not found, please check the list to ensure you entered the correct vin.\n";
+        output = vin + " not found, please check the list to ensure " +
+          "you entered the correct vin.\n";
       } else {
         this.getAutomobiles().remove(vinIndex);
         output =  vin + " was deleted.\n";
       }
     } catch (Exception ex ) {
-      output = "Trying to delete: " + vin + ". ran into an issue exception information below.\n" + ex.toString();
+      output = "Trying to delete: " + vin + ". ran into an issue exception " +
+        "information below.\n" + ex.toString();
     }
     return output;
   }
 
-  public String updateAutomobile (String make, String model, String vin, String color, int year, int mileage, double price) {
+  public String updateAutomobile (String make, String model, String vin, String color,
+                                  int year, int mileage, double price) {
     int vinIndex = findVin(vin);
     String output = "";
 
     try {
       if (vinIndex == -1) {
-        output = vin + " not found, please check the list to ensure you entered the correct vin.\n";
+        output = vin + " not found, please check the list to ensure you entered " +
+          "the correct vin.\n";
       } else {
         Automobile update = new Automobile(make, model, vin, color, year, mileage, price);
         automobiles.set(vinIndex, update);
         output = vin + " successfully updated.\n";
       }
     } catch (Exception ex) {
-      output = "There was an issue updating " + vin + ".\n Exception information below.\n" + ex.toString();
+      output = "There was an issue updating " + vin + ".\n Exception information below.\n"
+        + ex.toString();
     }
 
     return output;
@@ -195,7 +201,11 @@ public class AutomobileInventory {
     String response = "";
     while(!response.equalsIgnoreCase("y") || !response.equalsIgnoreCase("n") ) {
       System.out.println("Would you like to print this information to a file? (Y or N)");
-      response = scanner.next();
+      try {
+        response = scanner.next();
+      } catch (Exception ex) {
+        System.out.println("There was an issue with your input. ");
+      }
       if (response.equalsIgnoreCase("y")) {
         System.out.println("Saving to: C:\\tmp\\Autos.txt ");
         try {

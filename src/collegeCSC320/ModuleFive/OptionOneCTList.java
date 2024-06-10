@@ -59,8 +59,13 @@ public class OptionOneCTList {
       System.out.println("week - Summary of this week");
       System.out.println("end - Exit the program");
       System.out.println("Enter your response below.");
-      userInput = scanner.next();
-      userInput = userInput.toLowerCase();
+
+      try {
+        userInput = scanner.next();
+        userInput = userInput.toLowerCase();
+      } catch (Exception ex ){
+        System.out.println("There was an issue with your input: \n" + ex.toString());
+      }
 
       // Our options from the userInput.
       switch (userInput) {

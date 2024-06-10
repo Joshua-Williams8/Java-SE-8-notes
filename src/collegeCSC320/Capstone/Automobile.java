@@ -8,6 +8,7 @@ public class Automobile {
   private int year;
   private int mileage;
   private double price;
+  
   public Automobile(){
 
   }

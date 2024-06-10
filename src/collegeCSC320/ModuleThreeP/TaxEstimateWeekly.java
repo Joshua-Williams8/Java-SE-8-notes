@@ -10,18 +10,29 @@ public class TaxEstimateWeekly {
 
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    float weeklyIncome;
+    float weeklyIncome = 0;
     float taxRate;
     float taxPaid;
     float takeHome;
 
-    System.out.println("Please enter your weekly income? (decimal numbers can be entered)");
-    weeklyIncome = scanner.nextFloat();
-    System.out.println(weeklyIncome);
+    boolean noExceptionThrown = false;
 
-    while (weeklyIncome < 0) {
-      System.out.println("Sorry your input is invalid please enter a positive number.");
-      weeklyIncome = scanner.nextFloat();
+    while(!noExceptionThrown) {
+      try {
+        System.out.println("Please enter your weekly income? (decimal numbers can be entered)");
+        weeklyIncome = scanner.nextFloat();
+
+        while (weeklyIncome < 0) {
+          System.out.println("Sorry your input is invalid please enter a positive number.");
+          weeklyIncome = scanner.nextFloat();
+        }
+        noExceptionThrown = true;
+      } catch (Exception ex) {
+        System.out.println("Sorry your input caused an exception. \n" + ex.toString());
+        System.out.println("Please try to enter a valid value.");
+        scanner.next();
+        noExceptionThrown = false;
+      }
     }
 
     if (weeklyIncome < 500) {
@@ -38,13 +49,6 @@ public class TaxEstimateWeekly {
 
     }
 
-    int i = 0;
-    System.out.println(i);
-    for ( i=0;i<10;++i){
-      System.out.println(i);
-
-    }
-    System.out.println(i);
     taxPaid = taxRate * weeklyIncome;
     takeHome = weeklyIncome - taxPaid;
 

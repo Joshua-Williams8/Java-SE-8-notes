@@ -54,12 +54,20 @@ public class OptionOneCT {
     int loopCount = 0;
     Scanner scanner = new Scanner(System.in);
 
-    while (testList.size() < 5 && loopCount < 5) {
-      loopCount++;
-      System.out.println("There are currently " + testList.size() + " numbers out of 5");
-      System.out.println("Please enter in a number for your list.");
-      testList.add(scanner.nextFloat());
-    }
+      while (testList.size() < 5 && loopCount < 5) {
+        try {
+          loopCount++;
+          System.out.println("There are currently " + testList.size() + " numbers out of 5");
+          System.out.println("Please enter in a number for your list.");
+          testList.add(scanner.nextFloat());
+        } catch (Exception ex) {
+          System.out.println("There was an issue with your input: \n" + ex.toString());
+          scanner.next();
+          System.out.println("We will start you over, ONLY enter NUMBERS.");
+          testList = new ArrayList<>();
+          loopCount = 0;
+        }
+      }
 
     float total = getTotal(testList);
     float interest = getInterest(testList,.20F);
