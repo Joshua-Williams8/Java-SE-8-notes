@@ -35,13 +35,16 @@ public class CT2 {
 
     textPanel.add(introText, BorderLayout.NORTH);
     textPanel.add(bankInfo);
+    textPanel.setSize(200,200);
 
 
 
     //Deposit panel setup
     JPanel inputPanel = new JPanel(new GridLayout(1, 1, 3, 3));
     JTextField inputField = new JTextField();
+    inputField.setSize(100,50);
     inputPanel.add(inputField);
+//    inputPanel.setSize(200,200);
 
     //Button panel setup
     JPanel buttonPanel = new JPanel(new GridLayout(1, 2, 3, 3));
@@ -49,7 +52,6 @@ public class CT2 {
     withButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        System.out.println("Button clicked!");
         testAccount.withdrawal(Double.parseDouble(inputField.getText()));
         bankInfo.setText(testAccount.accountSummary());
       }
@@ -59,11 +61,11 @@ public class CT2 {
     depoButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        System.out.println("Button clicked!");
         testAccount.deposit(Double.parseDouble(inputField.getText()));
         bankInfo.setText(testAccount.accountSummary());
       }
     });
+
     buttonPanel.add(depoButton);
     buttonPanel.add(withButton);
 
@@ -71,12 +73,13 @@ public class CT2 {
     mainBankPanel.add(textPanel, BorderLayout.NORTH);
     mainBankPanel.add(inputPanel, BorderLayout.CENTER);
     mainBankPanel.add(buttonPanel, BorderLayout.SOUTH);
+    mainBankPanel.setSize(250,650);
 
     bankFrame.add(mainBankPanel);
+    bankFrame.setSize(250,250);
 
     // Should come last
     bankFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    bankFrame.pack();
     bankFrame.setVisible(true);
 
 
