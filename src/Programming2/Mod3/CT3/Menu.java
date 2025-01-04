@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Date;
+import java.util.Random;
 
 public class Menu {
 
@@ -25,6 +26,8 @@ public class Menu {
       System.out.println("There was an issue printing the file! \n" + ex.toString());
     }
   }
+
+  public static Random randomizer = new Random();
 
   public static void main(String[] args) {
     JFrame menuFrame = new JFrame();
@@ -73,11 +76,35 @@ public class Menu {
     //When the user selects the third menu item then the frame background color changes to
     // random color hue of the color green. The menu option should display
     // the initial random hue each time selected for a single execution of the program.
-    // See https://www.w3schools.com/colors/colors_picker.aspLinks to an external site.
+    // See https://www.w3schools.com/colors/colors_picker.asp to an external site.
     JPanel colorPanel = new JPanel(new BorderLayout());
+    JButton colorButton = new JButton("Set Background to a Random Green");
+//    JTextPane logText = new JTextPane();
+    colorButton.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+//      Made the max 240 to avoid picking too dark of a green to see
+        Color bgColor = new Color(0, randomizer.nextInt(240), 0);
+        //We actually cannot see the frame itself so we also need to
+        // change the main panel color and the current panel
+        menuFrame.setBackground(bgColor);
+        mainPanel.setBackground(bgColor);
+        colorPanel.setBackground(bgColor);
+      }
+    });
+    colorPanel.add(colorButton, BorderLayout.SOUTH);
 
     //When the user selects the fourth menu option then the program exits.
     JPanel exitPanel = new JPanel(new BorderLayout());
+    JButton exitButton = new JButton("Click to Exit");
+//    JTextPane logText = new JTextPane();
+    exitButton.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        menuFrame.dispose();
+      }
+    });
+    exitPanel.add(exitButton, BorderLayout.SOUTH);
 
     //Adding sub panels to main panel
     mainPanel.add(dateTimePanel);
@@ -92,7 +119,5 @@ public class Menu {
     menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     menuFrame.setVisible(true);
   }
-
-
 
 }
