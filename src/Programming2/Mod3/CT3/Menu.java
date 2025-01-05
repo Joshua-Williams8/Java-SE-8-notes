@@ -31,7 +31,7 @@ public class Menu {
 
   public static void main(String[] args) {
     JFrame menuFrame = new JFrame();
-    menuFrame.setTitle("Bank Account");
+    menuFrame.setTitle("Menu");
 
 
     //Going with Grid Layout since we know we need 4 menu options, may adjust this to a 2 x 2
