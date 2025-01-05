@@ -37,10 +37,7 @@ public class Menu {
     //Going with Grid Layout since we know we need 4 menu options, may adjust this to a 2 x 2
     JPanel mainPanel = new JPanel(new GridLayout(4, 1, 3, 3));
 
-
-    //  When the user selects the first menu option, then the date and time should be printed in a text box.
     JPanel dateTimePanel = new JPanel(new BorderLayout());
-    //  JTextArea dtIntro = new JTextArea();
     JButton dtButton = new JButton("Display Current Date and Time");
     JTextPane dtText = new JTextPane();
     dtText.setEditable(false);
@@ -54,11 +51,8 @@ public class Menu {
     });
     dateTimePanel.add(dtText, BorderLayout.CENTER);
     dateTimePanel.add(dtButton, BorderLayout.SOUTH);
-//    dateTimePanel.setPreferredSize(new Dimension(200, 50));
 
 
-    //When the user selects the second menu option,
-    // then the text box contents should be written to a text file named "log.txt."
     JPanel logPanel = new JPanel(new BorderLayout());
     JButton logButton = new JButton("Save to: C:\\tmp\\log.txt");
     JTextPane logText = new JTextPane();
@@ -70,34 +64,30 @@ public class Menu {
     });
     logPanel.add(logText, BorderLayout.CENTER);
     logPanel.add(logButton, BorderLayout.SOUTH);
-//    logPanel.setPreferredSize(new Dimension(200, 50));
 
-
-    //When the user selects the third menu item then the frame background color changes to
-    // random color hue of the color green. The menu option should display
-    // the initial random hue each time selected for a single execution of the program.
-    // See https://www.w3schools.com/colors/colors_picker.asp to an external site.
     JPanel colorPanel = new JPanel(new BorderLayout());
+    JTextField colorText = new JTextField("Hue of Green selected Displayed here");
+    colorText.setEditable(false);
     JButton colorButton = new JButton("Set Background to a Random Green");
-//    JTextPane logText = new JTextPane();
+
     colorButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-//      Made the max 240 to avoid picking too dark of a green to see
-        Color bgColor = new Color(0, randomizer.nextInt(240), 0);
+        Color bgColor = new Color(0, randomizer.nextInt(255), 0);
         //We actually cannot see the frame itself so we also need to
         // change the main panel color and the current panel
+        colorText.setText(bgColor.getGreen() + "");
         menuFrame.setBackground(bgColor);
         mainPanel.setBackground(bgColor);
         colorPanel.setBackground(bgColor);
       }
     });
+
+    colorPanel.add(colorText, BorderLayout.NORTH);
     colorPanel.add(colorButton, BorderLayout.SOUTH);
 
-    //When the user selects the fourth menu option then the program exits.
     JPanel exitPanel = new JPanel(new BorderLayout());
     JButton exitButton = new JButton("Click to Exit");
-//    JTextPane logText = new JTextPane();
     exitButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
