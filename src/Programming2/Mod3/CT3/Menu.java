@@ -33,11 +33,8 @@ public class Menu {
     JFrame menuFrame = new JFrame();
     menuFrame.setTitle("Menu");
 
+    JPanel mainPanel = new JPanel(new GridLayout(5, 1, 3, 3));
 
-    //Going with Grid Layout since we know we need 4 menu options, may adjust this to a 2 x 2
-    JPanel mainPanel = new JPanel(new GridLayout(4, 1, 3, 3));
-
-    JPanel dateTimePanel = new JPanel(new BorderLayout());
     JButton dtButton = new JButton("Display Current Date and Time");
     JTextPane dtText = new JTextPane();
     dtText.setEditable(false);
@@ -49,26 +46,21 @@ public class Menu {
         dtText.setText(dtCurrent.toString());
       }
     });
-    dateTimePanel.add(dtText, BorderLayout.CENTER);
-    dateTimePanel.add(dtButton, BorderLayout.SOUTH);
+
+    mainPanel.add(dtText);
+    mainPanel.add(dtButton);
 
 
-    JPanel logPanel = new JPanel(new BorderLayout());
     JButton logButton = new JButton("Save to: C:\\tmp\\log.txt");
-    JTextPane logText = new JTextPane();
     logButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        writeToFile(logText.getText());
+        writeToFile(dtText.getText());
       }
     });
-    logPanel.add(logText, BorderLayout.CENTER);
-    logPanel.add(logButton, BorderLayout.SOUTH);
+    mainPanel.add(logButton);
 
-    JPanel colorPanel = new JPanel(new BorderLayout());
-    JTextField colorText = new JTextField("Hue of Green selected Displayed here");
-    colorText.setEditable(false);
-    JButton colorButton = new JButton("Set Background to a Random Green");
+    JButton colorButton = new JButton("Set Background to a Random Green Hue");
 
     colorButton.addActionListener(new ActionListener() {
       @Override
@@ -76,17 +68,13 @@ public class Menu {
         Color bgColor = new Color(0, randomizer.nextInt(255), 0);
         //We actually cannot see the frame itself so we also need to
         // change the main panel color and the current panel
-        colorText.setText(bgColor.getGreen() + "");
         menuFrame.setBackground(bgColor);
         mainPanel.setBackground(bgColor);
-        colorPanel.setBackground(bgColor);
       }
     });
 
-    colorPanel.add(colorText, BorderLayout.NORTH);
-    colorPanel.add(colorButton, BorderLayout.SOUTH);
+    mainPanel.add(colorButton);
 
-    JPanel exitPanel = new JPanel(new BorderLayout());
     JButton exitButton = new JButton("Click to Exit");
     exitButton.addActionListener(new ActionListener() {
       @Override
@@ -94,18 +82,12 @@ public class Menu {
         menuFrame.dispose();
       }
     });
-    exitPanel.add(exitButton, BorderLayout.SOUTH);
-
-    //Adding sub panels to main panel
-    mainPanel.add(dateTimePanel);
-    mainPanel.add(logPanel);
-    mainPanel.add(colorPanel);
-    mainPanel.add(exitPanel);
+    mainPanel.add(exitButton);
 
     //Adding main panel to the frame, also with the other settings
     menuFrame.add(mainPanel);
 //    menuFrame.pack();
-    menuFrame.setSize(300,700);
+    menuFrame.setSize(300,400);
     menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     menuFrame.setVisible(true);
   }
