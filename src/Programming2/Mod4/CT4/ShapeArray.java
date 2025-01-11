@@ -12,6 +12,7 @@ public class ShapeArray {
 
     for (Shape shape : shapeArray) {
       System.out.println(shape.toString());
+      System.out.println("-----------");
     }
 
   }
