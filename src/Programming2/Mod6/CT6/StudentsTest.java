@@ -18,24 +18,15 @@ public class StudentsTest {
 //    Student student9 = new Student(1,"Ita","2 Bear Drive");
 //    Student student10 = new Student(1,"Jake","1 Bear Drive");
 
-  //Left the compare customizable in case I decided to swap options, or need it for later.
-
   public static void mergeSortStudents(ArrayList<Student> list, Comparator customCompare) {
     if (list.size() <= 1) {
       return;
     }
 
     int mid = list.size()/2;
-//    System.out.println(mid);
 
     ArrayList<Student> leftStudents = new ArrayList<>(list.subList(0, mid));
-//    System.out.println("Left: " + leftStudents.get(mid - 1));
     ArrayList<Student> rightStudents = new ArrayList<>(list.subList(mid, list.size()));
-//    System.out.println("Right: " + rightStudents.get(0));
-    //list.size() refers to the index in subList, not the actual size of the subList.
-//    System.out.println(leftStudents.size());
-//    System.out.println(rightStudents.size());
-//    System.out.println(list.size());
 
     mergeSortStudents(leftStudents, customCompare);
     mergeSortStudents(rightStudents, customCompare);
@@ -51,7 +42,6 @@ public class StudentsTest {
     int r = 0;
 
     int compareValue = customCompare.compare(leftSide.get(l), rightSide.get(r));
-//    System.out.println("Compare Value: " + compareValue);
     //Do the same thing for both -1 and 0
     //If the left side is less than the right
     while(l < leftSide.size() && r < rightSide.size() && m < mainList.size()) {
@@ -105,10 +95,6 @@ public class StudentsTest {
 
     mergeSortStudents(studentList, new StudentRollnoCompare());
 
-
-
-    // For testing end result of comparator
-//    Collections.sort(studentList, new StudentRollnoCompare());
     System.out.println("___________");
     for (Student stu: studentList){
       System.out.println(stu.toString());
