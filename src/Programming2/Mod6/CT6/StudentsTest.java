@@ -33,9 +33,9 @@ public class StudentsTest {
     ArrayList<Student> rightStudents = new ArrayList<>(list.subList(mid, list.size()));
 //    System.out.println("Right: " + rightStudents.get(0));
     //list.size() refers to the index in subList, not the actual size of the subList.
-    System.out.println(leftStudents.size());
-    System.out.println(rightStudents.size());
-    System.out.println(list.size());
+//    System.out.println(leftStudents.size());
+//    System.out.println(rightStudents.size());
+//    System.out.println(list.size());
 
     mergeSortStudents(leftStudents, customCompare);
     mergeSortStudents(rightStudents, customCompare);
@@ -51,10 +51,11 @@ public class StudentsTest {
     int r = 0;
 
     int compareValue = customCompare.compare(leftSide.get(l), rightSide.get(r));
-    System.out.println("Compare Value: " + compareValue);
+//    System.out.println("Compare Value: " + compareValue);
     //Do the same thing for both -1 and 0
     //If the left side is less than the right
-    while(l < leftSide.size() && r < rightSide.size() && m < mainList.size())
+    while(l < leftSide.size() && r < rightSide.size() && m < mainList.size()) {
+      compareValue = customCompare.compare(leftSide.get(l), rightSide.get(r));
       if (compareValue <= 0) {
         mainList.set(m , leftSide.get(l));
         m++;
@@ -65,6 +66,8 @@ public class StudentsTest {
         m++;
         r++;
       }
+    }
+
     //Add in the remaining values to which ever side still has values
     while(l < leftSide.size()) {
       mainList.set(m , leftSide.get(l));
@@ -96,9 +99,9 @@ public class StudentsTest {
       new Student(3,"Charlie","8 Bear Drive")
     ));
 
-//    for (Student stu: studentList){
-//      System.out.println(stu.toString());
-//    }
+    for (Student stu: studentList){
+      System.out.println(stu.toString());
+    }
 
     mergeSortStudents(studentList, new StudentRollnoCompare());
 
@@ -106,10 +109,10 @@ public class StudentsTest {
 
     // For testing end result of comparator
 //    Collections.sort(studentList, new StudentRollnoCompare());
-//    System.out.println("___________");
-//    for (Student stu: studentList){
-//      System.out.println(stu.toString());
-//    }
+    System.out.println("___________");
+    for (Student stu: studentList){
+      System.out.println(stu.toString());
+    }
   }
 
 
