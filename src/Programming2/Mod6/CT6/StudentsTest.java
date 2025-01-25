@@ -17,8 +17,7 @@ public class StudentsTest {
 //    Student student8 = new Student(1,"Harriet","3 Bear Drive");
 //    Student student9 = new Student(1,"Ita","2 Bear Drive");
 //    Student student10 = new Student(1,"Jake","1 Bear Drive");
-
-  public static void mergeSortStudents(ArrayList<Student> list, Comparator customCompare) {
+public static void mergeSortStudents(ArrayList<Student> list, Comparator customCompare) {
     if (list.size() <= 1) {
       return;
     }
