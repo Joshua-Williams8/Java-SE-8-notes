@@ -3,21 +3,12 @@ package Programming2.Mod6.CT6;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
-//import java.util.Collections;
 
+//Driver class
 public class StudentsTest {
 
-//      Student student1 = new Student(1,"Abe","10 Bear Drive");
-//    Student student2 = new Student(1,"Brandon","9 Bear Drive");
-//    Student student3 = new Student(1,"Charlie","8 Bear Drive");
-//    Student student4 = new Student(1,"Deacon","7 Bear Drive");
-//    Student student5 = new Student(1,"Edward","6 Bear Drive");
-//    Student student6 = new Student(1,"Foster","5 Bear Drive");
-//    Student student7 = new Student(1,"Gary","4 Bear Drive");
-//    Student student8 = new Student(1,"Harriet","3 Bear Drive");
-//    Student student9 = new Student(1,"Ita","2 Bear Drive");
-//    Student student10 = new Student(1,"Jake","1 Bear Drive");
-
+  //This method takes the arrayList and breaks it down into smaller bites,
+  // until each list only has one element.
 public static void mergeSortStudents(ArrayList<Student> list, Comparator customCompare) {
     if (list.size() <= 1) {
       return;
@@ -35,12 +26,21 @@ public static void mergeSortStudents(ArrayList<Student> list, Comparator customC
 
   }
 
+  //Takes in the original list to sort, and both a right side and left side list to check
+  // Lastly takes in the comparator, in case it needs to be changed for later.
+  // This method goes through each list, and compares all the left/right lists elements
+  // The element that is less than the other is added to the mainList at the lowest position
+  //going up until the last element is added to the end.
+
+  //This method changes the actual list, so it does not need to be returned
+  //It will continue to be called until all left and right list have been added into the array
   public static void mergeStudentLists(ArrayList<Student> mainList, ArrayList<Student> leftSide, ArrayList<Student> rightSide, Comparator customCompare) {
 
     int m = 0;
     int l = 0;
     int r = 0;
 
+    //This value will be -1 0 or 1, depending on if l is less than equal to or greater than r
     int compareValue = customCompare.compare(leftSide.get(l), rightSide.get(r));
     //Do the same thing for both -1 and 0
     //If the left side is less than the right
