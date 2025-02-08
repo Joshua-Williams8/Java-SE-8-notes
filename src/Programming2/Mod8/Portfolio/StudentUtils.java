@@ -12,16 +12,15 @@ import java.util.Scanner;
 public class StudentUtils {
 
   public static Double getValidDouble(String prompt) {
-    Scanner scanner = new Scanner(System.in);
-
-    System.out.println(prompt);
-    //Will catch if improper input is given.
+    //We want to go ahead and get a string instead of calling nextDouble.
+    String testOutput = getValidString(prompt);
     Double output = null;
+    //Now we want to parse that string into a double, and make sure it is valid.
     try {
-      output = scanner.nextDouble();
+      output = Double.parseDouble(testOutput);
+      //If invalid call out method again.
     } catch (Exception ex) {
       System.out.println("There was an issue with your input try again.");
-      scanner.next();
       //Call the method again if the input is bad.
       return getValidDouble(prompt);
     }
