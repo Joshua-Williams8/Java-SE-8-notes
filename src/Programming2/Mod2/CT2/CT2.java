@@ -1,4 +1,4 @@
-package Programming2.Mod2.CT;
+package Programming2.Mod2.CT2;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;

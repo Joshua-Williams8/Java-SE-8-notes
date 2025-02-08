@@ -1,4 +1,4 @@
-package Programming2.Mod1.CT;
+package Programming2.Mod1.CT1;
 
 public class CT1 {
   public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Programming2.Mod2.CT;
+package Programming2.Mod2.CT2;
 
 public class BankAccount {
 
