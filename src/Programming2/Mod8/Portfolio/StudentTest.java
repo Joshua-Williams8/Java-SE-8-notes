@@ -1,9 +1,5 @@
 package Programming2.Mod8.Portfolio;
 
-
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -42,6 +38,7 @@ public class StudentTest {
     ArrayList<Student> students = new ArrayList<>();
     addStudentsToList(students, 10);
     mergeSortStudents(students, new StudentNameCompare());
+    //File located at: tmp/Students.txt
     writeStudentsToFile(students);
 
   }

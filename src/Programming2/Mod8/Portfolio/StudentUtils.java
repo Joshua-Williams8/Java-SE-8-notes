@@ -19,6 +19,11 @@ public class StudentUtils {
     try {
       output = Double.parseDouble(testOutput);
       //If invalid call out method again.
+      //Since we are only get GPAs we need constraints
+      if (output < 0 || 4 < output ) {
+        System.out.println("Sorry the GPA given was invalid.");
+        return getValidDouble(prompt);
+      }
     } catch (Exception ex) {
       System.out.println("There was an issue with your input try again.");
       //Call the method again if the input is bad.

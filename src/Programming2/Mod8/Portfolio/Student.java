@@ -37,6 +37,6 @@ public class Student {
   }
 
   public String toString() {
-    return "Name: " + name + "\nGPA: " + gpa + "\nAddress: " + address;
+    return "Name: " + name + "\nGPA: " + gpa + "\nAddress: " + address + "\n";
   }
 }
