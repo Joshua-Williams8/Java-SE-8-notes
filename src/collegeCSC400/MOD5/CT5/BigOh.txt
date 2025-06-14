@@ -1,0 +1,24 @@
+For Radix
+Big O
+Our method uses a loop that goes for the input array length.
+
+Then call on the special countSort.
+The amount of times countSort is called depends on the largest value's digit count.
+The digit count is denoted by "d".
+n + d
+
+Inside of countSort we use two loops that go for the length of the input array.
+We also have a loop for the countArray that gathers the cumulative sums.
+This loop will end after 10 runs.
+(n + n + 10)
+
+n for "for loop" array length runs
+d for the digit loop runs for the max sized number amount of digits
+10 for the countArray cumulative sum loop
+
+n + d(n + n + 10)
+n + d(2n + 10)
+n + 2dn + 20d
+2dn + n + 20d
+For Big O
+Big O (n*d)

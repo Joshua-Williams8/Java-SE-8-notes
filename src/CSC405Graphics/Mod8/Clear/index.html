@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project</title>
+  <style>
+    @import url("Common/webgl-tutorials.css");
+    body {
+      margin: 0;
+    }
+    canvas {
+      width: 90vw;
+      height: 70vh;
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+
+<div>
+  <p>Cube Controls</p>
+  <button onclick="MoveCube(10)">Closer</button>
+  <button onclick="MoveCube(-10)">Further</button>
+</div>
+
+<div>
+  <p>Sphere Controls</p>
+  <button onclick="MoveSphere(10)">Closer</button>
+  <button onclick="MoveSphere(-10)">Further</button>
+</div>
+
+<div>
+  <p>Cone Controls</p>
+  <button onclick="MoveCone(10)">Closer</button>
+  <button onclick="MoveCone(-10)">Further</button>
+</div>
+<!-- vertex shader -->
+<script  id="vertex-shader-3d" type="x-shader/x-vertex">
+attribute vec4 a_position;
+attribute vec4 a_color;
+
+uniform mat4 u_matrix;
+
+varying vec4 v_color;
+
+void main() {
+  // Multiply the position by the matrix.
+  gl_Position = u_matrix * a_position;
+
+  // Pass the color to the fragment shader.
+  v_color = a_color;
+}
+</script>
+<!-- fragment shader -->
+<script  id="fragment-shader-3d" type="x-shader/x-fragment">
+precision mediump float;
+
+// Passed in from the vertex shader.
+varying vec4 v_color;
+
+uniform vec4 u_colorMult;
+
+void main() {
+   gl_FragColor = v_color * u_colorMult;
+}
+</script>
+
+<script src="Common/webgl-utils.js"></script>
+<script src="Common/m4.js"></script>
+<script src="Common/primitives.js"></script>
+<script src="PaintersAlgo.js"></script>
+
+</body>
+
+</html>

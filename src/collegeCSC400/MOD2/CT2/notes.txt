@@ -1,0 +1,20 @@
+//`int size()`: This method should return the total number of elements
+// in the bag, including duplicates.
+size() should return an integer of the amount
+We can count by using our getBagItems method,
+Then we get a loop going to count the amounts in the hashmap
+return that sum
+
+// `void merge(Bag<T> otherBag)`: This method should merge the elements of `otherBag`
+// into the current bag.
+merge() accepts another bag
+The merge, should take all of the keys with their values and add them to the current bag using a loop
+similar to size(), but instead adding the items into our bag
+ NOTE:    If the same item is in the other bag, we need to add the counts together
+ NOTE: Our add method seems to already take care of the inner part, just need to loop through it
+ NOTE: Need to overide add() to take in an int for an amount.
+
+// `Bag<T> distinct()`: This method should return a new bag that contains
+// only the distinct elements from the current bag.
+  We already have a similar getBagItems,
+  that returns a set could use this, and set all values to one

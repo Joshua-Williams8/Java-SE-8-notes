@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CT6</title>
+  <style>
+    body {
+      background-color: lightgray;
+      padding: 20px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+<canvas id="canvasCT6" width="800" height="500"></canvas>
+
+<div id="buttons">
+  <h2>Buttons <br></h2>
+  <button onclick="makeSidesBlack()">Make Right Side Black</button>
+  <button onclick="randomizeColors()">Randomize Right Side Color</button>
+  <button onclick="changeZoom(-3)">Zoom Out</button>
+  <button onclick="changeZoom(3)">Zoom In</button>
+  <!--    <button onclick="slideLeft()">Translate Left</button>-->
+  <!--    <button onclick="slideRight()">Translate Right</button>-->
+  <!--    <button onclick="slideUp()">Translate Up</button>-->
+  <!--    <button onclick="slideDown()">Translate Down</button>-->
+</div>
+
+<div>
+  <h2>Range Sliders<br></h2>
+  <div>
+    depth -15
+    <input id="depthSlider" type="range"
+           min="-15" max="15" step="0.1" value ="2" />
+    15
+  </div>
+
+</div>
+<script type='text/javascript' src="OtherFunctions.js"></script>
+<script type='text/javascript' src="CT6Sphere.js"></script>
+
+
+
+
+</body>
+</html>

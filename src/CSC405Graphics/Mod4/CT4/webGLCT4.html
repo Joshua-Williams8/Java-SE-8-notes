@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CT4</title>
+  <style>
+    body {
+      background-color: lightgray;
+      padding: 20px;
+      margin: 5px;
+    }
+    #CanvasCT4 {
+      width: 500px;
+      height: 500px;
+      /*
+      shows us if we didn't add the background color correctly
+       */
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="CanvasCT4"></canvas>
+
+  <div id="buttons">
+    <h2>Buttons <br></h2>
+    <button onclick="makeSideBlack()">Make Right Side Black</button>
+    <button onclick="randomizeColorRight()">Randomize Right Side Color</button>
+    <button onclick="changeZoom(-3)">Zoom Out</button>
+    <button onclick="changeZoom(3)">Zoom In</button>
+    <button onclick="slideLeft()">Translate Left</button>
+    <button onclick="slideRight()">Translate Right</button>
+    <button onclick="slideUp()">Translate Up</button>
+    <button onclick="slideDown()">Translate Down</button>
+  </div>
+
+  <script type='text/javascript' src="TestCube.js"></script>
+
+
+</body>
+</html>

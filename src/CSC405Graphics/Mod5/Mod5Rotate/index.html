@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CT5</title>
+  <style>
+    body {
+      background-color: lightgray;
+      padding: 20px;
+      margin: 5px;
+    }
+    #CanvasCT5 {
+      width: 400px;
+      height: 400px;
+      /*
+      shows us if we didn't add the background color correctly
+       */
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="CanvasCT5"></canvas>
+
+  <div id="buttons">
+    <h2>Buttons <br></h2>
+    <button onclick="makeSideBlack()">Make Right Side Black</button>
+    <button onclick="randomizeColorRight()">Randomize Right Side Color</button>
+    <button onclick="changeZoom(-3)">Zoom Out</button>
+    <button onclick="changeZoom(3)">Zoom In</button>
+    <button onclick="slideLeft()">Translate Left</button>
+    <button onclick="slideRight()">Translate Right</button>
+    <button onclick="slideUp()">Translate Up</button>
+    <button onclick="slideDown()">Translate Down</button>
+  </div>
+
+  <div>
+    <h2>Range Sliders<br></h2>
+    <div>
+      depth -10
+      <input id="depthSlider" type="range"
+             min="-10" max="10" step="0.1" value ="2" />
+      10
+    </div>
+
+    <div>
+      depth 0
+      <input id="rotateSlider" type="range"
+             min="-4" max="4" step="0.1" value ="0" />
+      180
+    </div>
+
+  </div>
+
+  <script type='text/javascript' src="TestCube.js"></script>
+
+
+</body>
+</html>

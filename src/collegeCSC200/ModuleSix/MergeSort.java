@@ -9,7 +9,7 @@ class MergeSort {
   // Second subarray is arr[m+1..r]
   void merge(int arr[], int left, int middle, int right)
   {
-    // Find sizes of two subarrays to be merged
+    // Find sizes of two sub arrays to be merged
     int n1 = middle - left + 1;
     int n2 = right - middle;
 
@@ -99,4 +99,3 @@ class MergeSort {
     printArray(arr);
   }
 }
-/* This code is contributed by Rajat Mishra */
