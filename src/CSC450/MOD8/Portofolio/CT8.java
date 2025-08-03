@@ -42,8 +42,7 @@ public class CT8 {
 
   public static void main(String[] args) {
 
-    long startTime = System.currentTimeMillis(); // Or System.nanoTime() for higher precision
-    // Your code to be tested
+    long startTime = System.currentTimeMillis();
 
     System.out.println("Counter starting at: " + count);
     upThread threadOne = new upThread();
@@ -52,7 +51,7 @@ public class CT8 {
     threadTwo.start();
 
     long endTime = System.currentTimeMillis();
-    long elapsedTime = endTime - startTime; // In milliseconds or nanoseconds
+    long elapsedTime = endTime - startTime;
     System.out.println("Execution time: " + elapsedTime + " ms");
   }
 }
